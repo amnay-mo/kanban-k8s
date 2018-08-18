@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanban-db
+  labels:
+    name: kanban-db
+  namespace: my-kanban
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: kanban-db
+  template:
+    metadata:
+      labels:
+        name: kanban-db
+    spec:
+      containers:
+      - name: kanban-db
+        image: mongo:3.6
+        ports:
+        - name: mongo
+          containerPort: 27017

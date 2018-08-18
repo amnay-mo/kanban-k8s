@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanban-api
+  labels:
+    name: kanban-api
+  namespace: my-kanban
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: kanban-api
+  template:
+    metadata:
+      labels:
+        name: kanban-api
+    spec:
+      containers:
+      - name: kanban-api
+        # github: https://github.com/amnay-mo/kanban-api
+        image: eu.gcr.io/myfoobarproject/kanban-api:0.2.1
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MONGO_HOST
+            value: kanban-db:27017
