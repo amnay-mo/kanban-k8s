@@ -19,6 +19,6 @@ spec:
       containers:
       - name: kanban-ui
         # github: https://github.com/amnay-mo/kanban-ui
-        image: eu.gcr.io/myfoobarproject/kanban-ui:0.3.2
+        image: eu.gcr.io/myfoobarproject/kanban-ui:0.5
         ports:
         - containerPort: 80

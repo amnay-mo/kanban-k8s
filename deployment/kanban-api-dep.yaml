@@ -19,7 +19,7 @@ spec:
       containers:
       - name: kanban-api
         # github: https://github.com/amnay-mo/kanban-api
-        image: eu.gcr.io/myfoobarproject/kanban-api:0.2-go
+        image: eu.gcr.io/myfoobarproject/kanban-api:0.4
         ports:
         - containerPort: 8080
         env:
@@ -27,3 +27,5 @@ spec:
             value: kanban-db:27017
           - name: APP_PORT
             value: "8080"
+          - name: SECRET_KEY
+            value: "3hrcvMDW+$XppvtwdE?d-jK-4xX2SAP5"
