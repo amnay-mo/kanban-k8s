@@ -28,4 +28,7 @@ spec:
           - name: APP_PORT
             value: "8080"
           - name: SECRET_KEY
-            value: "3hrcvMDW+$XppvtwdE?d-jK-4xX2SAP5"
+            valueFrom:
+              secretKeyRef:
+                name: kanban-api-secret
+                key: secret_key
